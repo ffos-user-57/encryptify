@@ -1,0 +1,71 @@
+body {
+    background-color:#343a40!important;
+}
+.section {
+    text-align: center;
+    background-color: #ec1e33;
+    color:white;
+    
+}
+.copyright {
+    font-size:8px;
+    font-family: Verdana;
+    margin-top: 10%;
+    color:white;
+    background-color:#343a40;
+}
+.result {
+    text-align: center;
+    border: 1px solid #ec1e33;
+    color:white;
+    background-color:#343a40;
+}
+.link {
+    display:inline;
+    opacity: 97%;
+    padding:1px;
+}
+.opensource {
+    color:white;
+    padding:1px;
+    text-align: center;
+    background-color:#343a40;
+}
+.titlething {
+    color:whitesmoke;
+    background-color:#343a40;
+    padding-bottom: 1vh;
+    text-align:center;
+}
+
+.btn-outline-danger {
+    color: #ec1e33;
+}
+
+.footer {
+    float:inline-end;
+}
+
+
+
+
+
+/*
+.btnx {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #464646;
+    border: 1px solid white ;
+    color: white;
+    padding: 5px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btnx:hover {
+
+    background-color: white;
+    color: #464646;
+}
+*/
