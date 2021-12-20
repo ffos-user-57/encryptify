@@ -58,24 +58,46 @@
     font-size:10px !important; 
     bottom: 0;
   }
+  .result {
+      margin-left:5%;
+      margin-right:5%;
+  }
 </style>
 
-<body>
-  <?php
-  $ret = "";
-  $ret2 = "";
-  if (!empty($_POST)) {
-    if (isset($_POST['pwdcon'])) {
-      //md5 enc
-      $str = $_POST['pwdcon'];
-      $ret = md5($str);
-      $ret2 = sha1($str);
+<?php 
 
-    } else {
-      //nothing
+$ret = "";
+$ret2 = "";
+if (!empty($_POST))
+{
+    if (isset($_POST['bulk']) ) {
+        $str = $_POST['bulk'];
+        $str_arr = explode (",", $str); 
+        foreach ($str_arr as &$value) {
+            $val = sha1($value);
+            $ret = $ret . "<br/>" . $val;
+        }
+        $str_arr2 = explode (",", $str); 
+        foreach ($str_arr2 as &$value) {
+            $val = md5($value);
+            $ret2 = $ret2 . "<br/>" . $val;
+        }
     }
-  }
-  ?>
+
+    else {
+        //nothing
+    }
+    if(str_starts_with($ret, ",")){
+        $ret = substr($ret, 1);
+    }
+    if(str_starts_with($ret2, ",")){
+        $ret2 = substr($ret2, 1);
+    }
+    
+}
+?>
+<body>
+
 
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
@@ -88,7 +110,7 @@
         <a href="./bulk.php" class="linkx w3-bar-item w3-button w3-medium">Bulk Encrypt</a>
         <a href="./learn.php" class="linkx w3-bar-item w3-button w3-medium">Stay safe online</a>
         <a href="./generator.php" class="linkx w3-bar-item w3-button w3-medium">Get a safe Password</a>
-        <a href="./checker.php" class="linkx w3-bar-item w3-button w3-medium">Check Password strength</a>
+        <a href="./checker.php" class="linkx w3-bar-item w3-button w3-medium">Check Password safety </a>
 
       </div>
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -114,33 +136,17 @@
 
   <div class="w3-display-container w3-grayscale-min" id="home">
     <div class="padx w3-text-black">
-      <h3 class="">Press a button – get hashes.</h3>
-      <p class="">Simple as that.</p>
-      <div class="result">
-        <p> 
-          
-            <?php 
-            if($ret != "" && $ret2 != ""){
-              echo "Your hashes:<br/><b>MD5:</b> " .  $ret . " <br/> <b>SHA1:</b> " . $ret2;
-            }
-            ?>
-        </p>
-      </div>
-      <div class="section">
-
-        <form action="index.php" method="post">
-          <input type="text" name="pwdcon"><br><br />
-          <input type="submit" class="w3-button w3-green w3-padding-medium w3-medium" value="Convert">
+      <h3 class="">Multiple passwords to hashes</h3>
+        <p>Enter your passwords seperated by a comma (no spaces) :</p>
+        <form action="bulk.php" method="post">
+        <textarea type="text" name="bulk" style="width:80%;height:150px;" > </textarea><br><br />
+        <input type="submit" class="w3-button w3-green w3-padding-medium w3-medium" value="Convert">
         </form>
-
-      </div>
-
-
-      </p>
-
-      <br>
-      <p style="text-align:center"> Encryptify is fully open source. It uses no database. No information is stored.</p>
-      <p class="bottomtext">This website is a project from Information Technology students at FFOS@UNIOS. Made by F.O. , A. K. and E.S. </p>
+    <div class="result"> 
+        <p> MD5 : <br/>  <b> <?php echo $ret2 ?> </b> </p> 
+        <p> SHA1 : <br/> <b> <?php echo $ret ?> </b> </p> 
+        <br/>
+        <p> Only multiple hashes work here, for individual converting visit <a href="./index.php"> Home </a></p>
     </div>
   </div>
 

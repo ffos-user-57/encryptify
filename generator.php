@@ -1,88 +1,170 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Encryptify</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<title>Encryptify</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Roboto, sans-serif
+    }
+
+    body,
+    html {
+        height: 80%;
+        line-height: 1.8;
+    }
+
+    body {
+        background-position: center;
+        background-size: cover;
+        background-image: url("img/bgRedesigned.jpg");
+        min-height: 100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+
+    .logox {
+        height: auto;
+        width: auto;
+        max-height: 72px;
+        max-width: 200px;
+    }
+
+
+    .linkx:hover {
+        background: rgba(76, 175, 80, 0.3) !important;
+    }
+
+    .linkx {
+        font-weight: bold;
+    }
+
+    .w3-bar .w3-button {
+        padding-top: 2%;
+    }
+
+    .padx {
+        text-align: center;
+        margin-top: 15%;
+    }
+
+    .bottomtext {
+        font-size: 10px !important;
+        bottom: 0;
+    }
+</style>
 
 <body>
-<?php 
-$ret = "";
-$hashtype = "";
+    <?php
+    $ret = "";
+    $hashtype = "";
 
-function randomPassword() {
-    $alphabet = '!#$&.,-:_;()=?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-    $pass = array(); //remember to declare $pass as an array
-    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-    for ($i = 0; $i < 12; $i++) {
-        $n = rand(0, $alphaLength);
-        $pass[] = $alphabet[$n];
+    function randomPassword()
+    {
+        $alphabet = '!#$&.,-:_;()=?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 12; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
     }
-    return implode($pass); //turn the array into a string
-}
 
 
-if (!empty($_GET))
-{
-    if (isset($_GET['gen']) ) {
-        //md5 enc
-        $ret = randomPassword();
+    if (!empty($_GET)) {
+        if (isset($_GET['gen'])) {
+            //md5 enc
+            $ret = randomPassword();
+        } else {
+            //nothing
+        }
     }
-    else {
-        //nothing
-    }
-}
-?>
 
-<div class="navbar">
-        <form action="index.php" class="link">
-            <input type="submit" value="Home" class="btnx" />
-        </form>
-         <form action="bulkmd5.php" class="link">
-            <input type="submit" value="Bulk MD5 Encrypt"  class="btnx"  />
-        </form>
-        <form action="bulksha.php" class="link">
-            <input type="submit" value="Bulk SHA1 Encrypt" class="btnx"   />
-        </form>
-        </form>
-        <form action="learn.php" class="link">
-            <input type="submit" value="Learn to be safe online!"   class="btnx" />
-        </form>
-        <form action="generator.php" class="link">
-            <input type="submit" value="Generate a safe password!"  class="btnx"  />
-        </form>
-        <form action="checker.php" class="link">
-            <input type="submit" value="Check the safety of your password!"  class="btnx"  />
-        </form>
 
+
+    ?>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-transparent" id="myNavbar">
+            <img href="/" class="logox" src="img/officialLogo.png" />
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <!--  <b> -->
+                <a href="./index.php" class="linkx w3-bar-item w3-button w3-medium">Home</a>
+                <a href="./bulk.php" class="linkx w3-bar-item w3-button w3-medium">Bulk Encrypt</a>
+                <a href="./learn.php" class="linkx w3-bar-item w3-button w3-medium">Stay safe online</a>
+                <a href="./generator.php" class="linkx w3-bar-item w3-button w3-medium">Get a safe Password</a>
+                <a href="./checker.php" class="linkx w3-bar-item w3-button w3-medium">Check Password safety </a>
+
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; box-shadow: none;" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="./index.php" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+    <a href="./bulk.php" onclick="w3_close()" class="w3-bar-item w3-button"> Bulk Encrypt</a>
+    <a href="./learn.php" onclick="w3_close()" class="w3-bar-item w3-button"> Stay safe online</a>
+    <a href="./generator.php" onclick="w3_close()" class="w3-bar-item w3-button"> Get a safe Password</a>
+    <a href="./checker.php" onclick="w3_close()" class="w3-bar-item w3-button"> Check Password strength </a>
+  </nav>
+
+
+
+
+    <div class="w3-display-container w3-grayscale-min" id="home">
+        <div class="padx w3-text-black">
+            <h3 class="">Press a button – Get a safe password.</h3>
+
+
+            <form action="generator.php" method="get">
+                <button type="submit" name="gen" class="w3-button w3-green w3-padding-medium w3-medium" value="Generate">
+                Generate </button>
+            </form>
+            <div class="result">
+                <p> Generated safe password : <b> <?php echo $ret ?> </b> </p>
+            </div>
+
+
+        </div>
     </div>
 
 
-    <div class="titlething">
-        <h1>Encryptify</h1>
-    </div>
-    <!-- Encryption section -->
-    <div class="section">
-        <br />
-        <h2>Press the button to generate a safe password</h2>
-        <form action="generator.php" method="get">
-            <button type="submit" name="gen" value="value">Generate</button>
-        </form>
-        <br/><br />
-    </div>
-    <div class="result"> 
-        <p> Generated safe password : <b> <?php echo $ret ?> </b> </p> 
 
-        <br>
+    <script>
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
 
-    </div>
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
 
-
-    <footer>
-        <br /><br />
-        <p class="copyright">Copyright 2021 - FFOS Croatia students: F.O.(Programming),  </p>
-    </footer>
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+    </script>
 
 </body>
 

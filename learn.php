@@ -1,79 +1,198 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Encryptify</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<title>Encryptify</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Roboto, sans-serif
+  }
+
+  body,
+  html {
+    height: 80%;
+    line-height: 1.8;
+  }
+
+  body {
+    background-position: center;
+    background-size: cover;
+    background-image: url("img/bgRedesigned.jpg");
+    min-height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+
+  .logox {
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 200px;
+  }
+
+
+  .linkx:hover {
+    background: rgba(76, 175, 80, 0.3) !important;
+  }
+
+  .linkx {
+    font-weight: bold;
+  }
+
+  .w3-bar .w3-button {
+    padding-top: 2%;
+  }
+
+  .padx {
+    text-align: center;
+    margin-top: 15%;
+  }
+
+  .bottomtext {
+    font-size: 10px !important;
+    bottom: 0;
+  }
+
+  .textframe {
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    opacity: 90%;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 2%;
+  }
+</style>
 
 <body>
-<?php 
-$ret = "";
-$hashtype = "";
-if (!empty($_POST))
-{
-    if (isset($_POST['passMD5']) ) {
-        //md5 enc
-        $str = $_POST['passMD5'];
-        $hashtype = "MD5";
-        $ret = md5($str);
-    }
-    elseif (isset($_POST['pass512']) ){
-        //sha enc
-        $str = $_POST['pass512'];
-        $hashtype = "SHA1";
-        $ret = sha1($str);
-    }
-    else {
-        //nothing
-    }
-}
-?>
 
-<div class="navbar">
-        <form action="index.php" class="link">
-            <input type="submit" value="Home" class="btnx" />
-        </form>
-         <form action="bulkmd5.php" class="link">
-            <input type="submit" value="Bulk MD5 Encrypt"  class="btnx"  />
-        </form>
-        <form action="bulksha.php" class="link">
-            <input type="submit" value="Bulk SHA1 Encrypt" class="btnx"   />
-        </form>
-        </form>
-        <form action="learn.php" class="link">
-            <input type="submit" value="Learn to be safe online!"   class="btnx" />
-        </form>
-        <form action="generator.php" class="link">
-            <input type="submit" value="Generate a safe password!"  class="btnx"  />
-        </form>
-        <form action="checker.php" class="link">
-            <input type="submit" value="Check the safety of your password!"  class="btnx"  />
-        </form>
 
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-transparent" id="myNavbar">
+      <img href="/" class="logox" src="img/officialLogo.png" />
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <!--  <b> -->
+        <a href="./index.php" class="linkx w3-bar-item w3-button w3-medium">Home</a>
+        <a href="./bulk.php" class="linkx w3-bar-item w3-button w3-medium">Bulk Encrypt</a>
+        <a href="./learn.php" class="linkx w3-bar-item w3-button w3-medium">Stay safe online</a>
+        <a href="./generator.php" class="linkx w3-bar-item w3-button w3-medium">Get a safe Password</a>
+        <a href="./checker.php" class="linkx w3-bar-item w3-button w3-medium">Check Password safety </a>
+
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
+  </div>
 
-    <div class="titlething">
-        <h1>Encryptify</h1>
-    </div>
-    <!-- Encryption section -->
-    <div class="section">
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; box-shadow: none;" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="./index.php" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+    <a href="./bulk.php" onclick="w3_close()" class="w3-bar-item w3-button"> Bulk Encrypt</a>
+    <a href="./learn.php" onclick="w3_close()" class="w3-bar-item w3-button"> Stay safe online</a>
+    <a href="./generator.php" onclick="w3_close()" class="w3-bar-item w3-button"> Get a safe Password</a>
+    <a href="./checker.php" onclick="w3_close()" class="w3-bar-item w3-button"> Check Password strength </a>
+  </nav>
+
+
+
+
+  <div class="w3-display-container w3-grayscale-min" id="home">
+    <div class="padx w3-text-black">
+      <h3>About Hashes, Us and staying safe online</h3>
+      <div class="textframe">
+
+        <h3>What is a hash? </h3>
+        <p style="margin-left:1%; margin-right:1%;">
+          A cryptographic hash function is an algorithm that can be run on data such as an individual file or a password
+          to produce a value called a checksum. The values returned by a hash function are called hash values, hash codes,
+          digests, or simply hashes. A cryptographic hash function is a special class of hash function that has certain
+          properties which make it suitable for use in cryptography. Hash functions are generally irreversible (one-way),
+          which means you can't figure out the input if you only know the output unless you try every possible input which
+          is called a brute-force attack.¸
+        <p style="font-size:10px">Source: https://www.onlinewebtoolkit.com/hash-generator</p>
         <br />
-        <p>Hello world </p>
-        <br/>
+        <h3>What is an MD5 hash</h3>
+        <p style="margin-left:1%; margin-right:1%;">
+          MD5 is a message-digest algorithm is a widely used hash function producing a 128-bit hash value. This md5 online
+          generator calculate the md5 hash of a string, which from any input data creates a 32 character hexadecimal
+          number. <br />For example MD5 for 12345: 827ccb0eea8a706c4c34a16891f84e7b
+        </p>
+        <p style="font-size:10px">Source: https://www.onlinewebtoolkit.com/hash-generator</p>
+        <br />
+        <h3>What is a SHA1 hash</h3>
+
+        SHA1 (Secure Hash Algorithm 1) is a cryptographic hash function or algorithm which takes an input as a string
+        and produces a 160-bit (20-byte) hash value known as a message digest typically generated as a hexadecimal
+        number, 40 digits long.
+
+
+        <p style="font-size:10px">Source: https://www.onlinewebtoolkit.com/hash-generator</p>
+
+        <p style="margin-left:1%; margin-right:1%;">
+          <br />
+        <h3>About Us</h3>
+        This site is fully Open Source project by students at FFOS@UNIOS. You can visit the developer's Github to see the code:<br /> https://github.com/ffos-user-57 <br />
+        Encryptify does NOT use databases, or anything similar. It does NOT keep logs (at least the original version doesn't, we are not responsible for forks) <br /> We made Encryptify like this so your data is safer. <br />Online services which convert a string to MD5 usually dont provide their open source code and you are never sure what's running behind. <br />With our project you can set it up locally easily and have a safe way to secure your passwords.
+        <br />For a safer approach use HTTPS (SSL/TLS) !
+        </p>
+        </p>
+
+        <br />
+        <h3>How easy is it to crack passwords?</h3>
+        <p style="margin-left:1%; margin-right:1%;"> stagod </p>
+
+        <br />
+        <h3>Why should my password be secure?</h3>
+        <p style="margin-left:1%; margin-right:1%;"> stagod </p>
+
+        <br />
+        <h3>Should i tell anyone my password?</h3>
+        <p style="margin-left:1%; margin-right:1%;"> stagod </p>
+
+
+
+        <br /><br /><br />
+
+
+
+      </div>
     </div>
-    <div class="result"> 
-        <p> To learn more about password safety visit our <a href="generator.php"> SECURE PASSWORD GENERATOR</a> or <a href="checker.php">PASSWORD CHECKER </a> </p> 
+  </div>
 
 
 
-    </div>
+  <script>
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
 
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
 
-    <footer>
-        <br /><br />
-        <p class="copyright">Copyright 2020 F.O. - FFOS Student</p>
-    </footer>
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+    }
+  </script>
 
 </body>
 
