@@ -68,44 +68,38 @@
 </style>
 <?php
 $ret = "";
-$hashtype = "";
-
-function checkPassword($pwd)
-{
-    $errors = "";
-    if (strlen($pwd) < 8) {
-        $errors = $errors . "; Password too short! <br>";
-    }
-
-    if (!preg_match("#[0-9]+#", $pwd)) {
-        $errors = $errors . "; Password must include at least one number! <br>";
-    }
-
-    if (!preg_match("#[a-z]+#", $pwd)) {
-        $errors = $errors . "; Password must include at least one lowercase letter! <br>";
-    }
-    if (!preg_match("#[A-Z]+#", $pwd)) {
-        $errors = $errors . "; Password must include at least one capital letter! <br>";
-    }
-    if (!preg_match("#\W#", $pwd)) {
-        $errors = $errors . "; Password must include at least one symbol! <br>";
-    }
-
-
-
-    return ($errors);
-}
-
+ 
 
 if (!empty($_POST)) {
     if (isset($_POST['gen'])) {
         //md5 enc
         $thepass = $_POST['gen'];
-        $ret = checkPassword($thepass);
+        
+
+        $errors = "";
+        if (strlen($thepass) < 8) {
+            $errors = $errors . "- Password too short! <br>";
+        }
+    
+        if (!preg_match("#[0-9]+#", $thepass)) {
+            $errors = $errors . "- Password must include at least one number! <br>";
+        }
+    
+        if (!preg_match("#[a-z]+#", $thepass)) {
+            $errors = $errors . "- Password must include at least one lowercase letter! <br>";
+        }
+        if (!preg_match("#[A-Z]+#", $thepass)) {
+            $errors = $errors . "- Password must include at least one capital letter! <br>";
+        }
+        if (!preg_match("#\W#", $thepass)) {
+            $errors = $errors . "- Password must include at least one symbol! <br>";
+        }
+        $ret = $errors;
+
         if (strlen($ret) < 2) {
             $ret = "Safe";
         }
-        if (str_starts_with($ret, ";")) {
+        if (str_starts_with($ret, "-")) {
             $ret = substr($ret, 1);
             $ret = "<br>" . $ret;
         }
@@ -124,7 +118,7 @@ if (!empty($_POST)) {
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div class="w3-bar w3-transparent" id="myNavbar">
-            <img href="/" class="logox" src="img/officialLogo.png" />
+        <a href="./index.php"><img  class="logox" src="img/officialLogo.png" /></a>
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
                 <!--  <b> -->
@@ -161,7 +155,7 @@ if (!empty($_POST)) {
             <h3>Enter your password And Check how secure it is</h3>
             <form action="checker.php" method="post">
                 <input type="password" name="gen">
-                <button type="submit" name="gen" class="w3-button w3-green w3-padding-medium w3-medium" value="Check">
+                <button type="submit" class="w3-button w3-green w3-padding-medium w3-medium">
                 Check Password </button>
             </form>
             <br />
@@ -171,7 +165,7 @@ if (!empty($_POST)) {
             <br>
         </div>
         <br/>
-        <p style="text-align:center;"> Encryptify keeps <u>No Logs</u>. Your passwords won't be stored in any databases. The project is <u>entirely</u> Open Source.<br/><br/> Keep in mind that this checker <u>does not</u> check for words in the string !! <br/>So even Admin123! is considered safe, yet there are words in it which significantly reduces how secure it is. </p>
+        <p style="text-align:center;"> Encryptify keeps <u>No Logs</u>. Your passwords won't be stored in any databases. The project is <u>entirely</u> Open Source.<br/><br/> <b>Keep in mind</b> that this checker <u>does not</u> check for words in the string !! <br/>So even Admin123! is considered safe, yet there are words in it which significantly reduces how secure it is. </p>
 
 
 

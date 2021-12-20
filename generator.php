@@ -61,6 +61,12 @@
         font-size: 10px !important;
         bottom: 0;
     }
+    .textualpart {
+        background-color:white;
+        margin-left:5%;
+        margin-right:5%;
+        opacity:90%;
+    }
 </style>
 
 <body>
@@ -97,7 +103,7 @@
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div class="w3-bar w3-transparent" id="myNavbar">
-            <img href="/" class="logox" src="img/officialLogo.png" />
+        <a href="./index.php"><img  class="logox" src="img/officialLogo.png" /></a>
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
                 <!--  <b> -->
@@ -141,8 +147,14 @@
             <div class="result">
                 <p> Generated safe password : <b> <?php echo $ret ?> </b> </p>
             </div>
-
-
+            <br/>
+            <div class="textualpart">
+                <h5>Q: This is too complex! Why does my password have to be like this? </h5>
+                <p> A: Because hackers crack them bla bla </p>
+                <br/>
+                <h5>Q: Can I insert a word into my password ?</h5>
+                <p> A: Sure, but make sure you use lowercase and uppercase letters, numbers and symbols - that way it should be way safer.<br/> Also - Don't use words that are too common! Admin123! isnt a safe password. Check <a href="https://en.wikipedia.org/wiki/List_of_the_most_common_passwords">Here</a> for a list of the most common passwords. </p>
+            </div>
         </div>
     </div>
 

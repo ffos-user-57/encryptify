@@ -80,7 +80,7 @@
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-transparent" id="myNavbar">
-      <img href="/" class="logox" src="img/officialLogo.png" />
+      <a href="./index.php"><img  class="logox" src="img/officialLogo.png" /></a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <!--  <b> -->
