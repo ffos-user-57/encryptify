@@ -47,7 +47,7 @@
     font-weight: bold;
   }
   .w3-bar .w3-button {
-    padding-top: 2%;
+    padding-top: 3%;
   }
 
   .padx {
@@ -141,6 +141,14 @@
       <br>
       <p style="text-align:center"> Encryptify is fully open source. It uses no database. No information is stored.</p>
       <p class="bottomtext">This website is a project from Information Technology students at FFOS@UNIOS. Made by F.O. , A. K. and E.S. </p>
+      <br/>
+      <br/>
+      <p class="bottomtext"> Language : 
+        <a href="index.php"><img src="img/eng.png" width="25" height="15"/></a>
+        Or
+        <a href="hr/index.php"> <img src="img/cro.png"  width="25" height="15"/> </a>
+      </p>
+    
     </div>
   </div>
 

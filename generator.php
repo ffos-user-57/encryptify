@@ -146,14 +146,16 @@
             </form>
             <div class="result">
                 <p> Generated safe password : <b> <?php echo $ret ?> </b> </p>
+                <p style=color:grey>If the generated password does not contain any a capital letter, a non-capital letter, number or a symbol <br/> click "Generate" again for the safest password.</p>
             </div>
             <br/>
             <div class="textualpart">
                 <h5>Q: This is too complex! Why does my password have to be like this? </h5>
-                <p> A: Because hackers crack them bla bla </p>
+                <p> A: The security policies of many of websites leave information completely exposed. Complex passwords are more difficult to crack! </p>
                 <br/>
                 <h5>Q: Can I insert a word into my password ?</h5>
                 <p> A: Sure, but make sure you use lowercase and uppercase letters, numbers and symbols - that way it should be way safer.<br/> Also - Don't use words that are too common! Admin123! isnt a safe password. Check <a href="https://en.wikipedia.org/wiki/List_of_the_most_common_passwords">Here</a> for a list of the most common passwords. </p>
+                <br/>
             </div>
         </div>
     </div>

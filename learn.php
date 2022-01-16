@@ -123,7 +123,7 @@
           digests, or simply hashes. A cryptographic hash function is a special class of hash function that has certain
           properties which make it suitable for use in cryptography. Hash functions are generally irreversible (one-way),
           which means you can't figure out the input if you only know the output unless you try every possible input which
-          is called a brute-force attack.¸
+          is called a <u>brute-force attack</u>.
         <p style="font-size:10px">Source: https://www.onlinewebtoolkit.com/hash-generator</p>
         <br />
         <h3>What is an MD5 hash</h3>
@@ -147,23 +147,57 @@
           <br />
         <h3>About Us</h3>
         This site is fully Open Source project by students at FFOS@UNIOS. You can visit the developer's Github to see the code:<br /> https://github.com/ffos-user-57 <br />
-        Encryptify does NOT use databases, or anything similar. It does NOT keep logs (at least the original version doesn't, we are not responsible for forks) <br /> We made Encryptify like this so your data is safer. <br />Online services which convert a string to MD5 usually dont provide their open source code and you are never sure what's running behind. <br />With our project you can set it up locally easily and have a safe way to secure your passwords.
+        Encryptify does NOT use databases, or anything similar. It does NOT keep logs <br/><p style="font-size:10px">(at least the original version doesn't, we are not responsible for forks or changed up copies)</p> We made Encryptify like this so your data is safer. <br />Online services which convert a string to MD5 usually dont provide their open source code and you are never sure what's running behind. <br />With our project you can set it up locally easily and have a safe way to secure your passwords.
         <br />For a safer approach use HTTPS (SSL/TLS) !
         </p>
         </p>
 
         <br />
         <h3>How easy is it to crack passwords?</h3>
-        <p style="margin-left:1%; margin-right:1%;"> stagod </p>
+        <p style="margin-left:1%; margin-right:1%;"> A hacker can crack your account password very easily, just using a variety of programs like a simple password-guessing program. This program makes multiple guesses until the password is fully cracked. The program may take a few minutes or a century; it depends on the complexity of the password. Other methods like key loggers consist of hardware devices attached to your computer that can copy your information through keywords that you use to access the accounts. Hacking through phones is another way for these people to steal your data. Using programs that can duplicate what you see on your phone, it is relatively easy for them to get your password from your phone. How long does it take for your password to be cracked?
+        <br/>
+      5 characters = 10 seconds
+      <br/>
+      6 characters = 1,000 seconds
+      <br/>
+      7 characters = 1 day
+      <br/>
+      8 characters = 115 days
+      <br/>
+      9 characters = 31 years
+      <br/>
+      10 characters = 3,000 years 
+      </p>
 
         <br />
         <h3>Why should my password be secure?</h3>
-        <p style="margin-left:1%; margin-right:1%;"> stagod </p>
+        <p style="margin-left:1%; margin-right:1%;"> Passwords provide the first line of defense against unauthorized access to your computer and personal information. <br/>The stronger your password, the more protected your computer will be from hackers and malicious software. You should maintain strong passwords for all accounts on your computer. 
+        Here’s a list of common ways to be more efficient with your passwords:
+        </br>
+        -Capitalizing the first letter of a word.
+        </br>
+        -Checking all combinations of upper/lower case for words.
+        </br>
+        -Inserting a number randomly in the word.
+        </br>
+        -Putting numbers on the ends of words.
+        </br>
+        -Putting numbers on the beginning of words.
+        </br>
+        -Putting the same pattern at both ends.
+
+      </br>
+
+      You can also use our <a href="./generator.php">Generator of safe passwords</a> for this purpose.
+      </p>
 
         <br />
         <h3>Should i tell anyone my password?</h3>
-        <p style="margin-left:1%; margin-right:1%;"> stagod </p>
+        <p style="margin-left:1%; margin-right:1%;"> NO. You compromise your account security. ... Even if you trust the person to whom you give your password, they may not store it in a secure location or they might keep it on a compromised device, opening it up to potential theft and thus putting you, your accounts and your private information at risk. </p>
 
+        <br />
+        <h3>Contact</h3>
+        <p style="margin-left:1%; margin-right:1%;"> Currently our contact information is limited to Github. (ffos-user-57)</p>
 
 
         <br /><br /><br />

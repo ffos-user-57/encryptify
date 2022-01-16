@@ -165,7 +165,11 @@ if (!empty($_POST)) {
             <br>
         </div>
         <br/>
-        <p style="text-align:center;"> Encryptify keeps <u>No Logs</u>. Your passwords won't be stored in any databases. The project is <u>entirely</u> Open Source.<br/><br/> <b>Keep in mind</b> that this checker <u>does not</u> check for words in the string !! <br/>So even Admin123! is considered safe, yet there are words in it which significantly reduces how secure it is. </p>
+        <p style="text-align:center;"> Encryptify keeps <u>No Logs</u>. Your passwords won't be stored in any databases. The project is <u>entirely</u> Open Source.<br/>
+        <br/>If Encryptify is hosted on a website, make sure you trust the site before entering your password.
+        <br/> <b>Keep in mind</b> that this checker <u>does not</u> check for words in the string !! <br/>So even Admin123! is considered safe, yet there are words in it which significantly reduces how secure it is. </p>
+
+
 
 
 
