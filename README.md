@@ -7,6 +7,9 @@ Encryptify is a website that teaches about encryption + There is no database, no
 # Installation
 Get XAMPP - run apache on it - open your htdocs and dump the encryptify folder inside - Done.
 
+# QA Tests to verify functionality 
+Tests were executed in order to verify functionality and assure quality. Manual and automaic tests were ran and written by A.K. See more at : X
+
 # Difficulties/Errors
 If you are facing difficulties its most likely cause of an outdated version of PHP (I used PHP 8.0.11) or XAMPP (I used v3.3.0) (Tho most versions should work, older ones might not - also if you are not using XAMPP you are gonna have to figure out how to set it all up - no external modules/libraries are required)
 
