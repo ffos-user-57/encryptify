@@ -1,0 +1,35 @@
+# DEBIAN INSTALLATION
+
+# install the requirements
+
+sudo apt install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2
+
+# Add the repo into sources.lst
+
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list 
+
+
+# Add the keyzzzz (it can say they are outdated, thats fine it will still work)
+
+wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -  
+
+
+# Apt update so everything gets ready
+
+sudo apt update
+
+# Install php8
+
+sudo apt install php8.0 
+
+# Navigate to your downloads and unzip the file
+
+cd ~/Downloads; unzip encryptify-main.zip ; cd encryptify-main
+
+# run the server
+
+sudo php8.0 -S localhost:80
+
+# Go to your browser's localhost site (enter into urlbar "localhost")
+
+echo "THATS ALL FOLKS! :)"
