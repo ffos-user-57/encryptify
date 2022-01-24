@@ -14,7 +14,8 @@ If you are facing difficulties its most likely cause of an outdated version of P
 If you are getting any other kind of error submit it here on Github so I'll look into it.
 
 # QA Tests to verify functionality 
-Tests were executed in order to verify functionality and assure quality. Manual and automaic tests were ran and written by A.K. See more at : X
+Tests were executed in order to verify functionality and assure quality. Manual and automaic tests were ran and written by A.K. See the test plan at : [a link](https://github.com/ffos-user-57/encryptify/blob/main/Encriptify-testPlan.docx)
+And see the QA tests (RN/WDIO code) here : [a link](https://github.com/ffos-user-57/encryptify/blob/main/Tests/test/specs/basic.e2e.js)
 
 # Members
 FFOS students - F.O. , A. K., E.S. - Projektni rad - IT 
